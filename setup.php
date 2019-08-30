@@ -97,6 +97,9 @@ function plugin_init_accounts() {
 
       // End init, when all types are registered
       $PLUGIN_HOOKS['post_init']['accounts'] = 'plugin_accounts_postinit';
+      if (class_exists('PluginMydashboardMenu')) {
+         $PLUGIN_HOOKS['mydashboard']['accounts'] = ["PluginAccountsDashboard"];
+      }
 
    }
 }
